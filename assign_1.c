@@ -1,1 +1,8 @@
-iusbdopfuyvgoayurg
+#include <stdio.h>
+
+
+
+int main{
+    
+    printf("wahahhahahahhaaSSDZZZZAAA");
+}
