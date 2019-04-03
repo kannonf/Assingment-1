@@ -9,7 +9,7 @@ void encryptRotate (char *input, int k) ;
 //char encryptSub (chr input, int k)
 //function prototype for decrypting sub cypher 
 //char unencryptSub (chr input, int k)
-
+//extra comments
 int main() {
     
     char input[] = "TESTING" ;
