@@ -2,21 +2,20 @@
 
 // define functions
 //function prototype for encrypting rotation cypher
-char encryptRotate (char input, int k) ;
+char encryptRotate (char *input, int k) ;
 //function prototype for decrypting rotation cypher 
+//char unencryptRotate (char input, int k)
 //function prototype for encrypting sub cypher
+//char encryptSub (chr input, int k)
 //function prototype for decrypting sub cypher 
+//char unencryptSub (chr input, int k)
 
 int main() {
     
-   int i ;
-    char input[] = "newLett" ;
-    printf("message: %s\n", input);
+    char input[] = "testing" ;
+    printf("message: %d\n", *input);
     
-     /* FYI: How to tell how many letters there are:
-     sizeof(<array_name>)/sizeof(char)
-     */
-    // char retval = encrytpRotate(message[i], 3);
+    //char retval = encrytpRotate([i], 3);
      
    //messageText = abcdefg
    //rotationAmount = 2
@@ -29,16 +28,16 @@ int main() {
 }
 
 //function definition for encrypting rotation cypher
-char encryptRotate (char input, int k) {
-    int i ; //counter
+char encryptRotate (char *input, int k) {
+    int i = 0 ; //counter
     char messLett ; //one letter from message
-    char newLett ; //one letter from message now decrypted
-        for (i = 0 ; i < (sizeof(input)/sizeof(char)) ; i++) {
-        messLett = (messLett+k)%26;
-        newLett = messLett ;
+    //char newLett ; //one letter from message now decrypted
+        for (i = 0 ; i < (sizeof(input)/sizeof(char)); i++) {
+        messLett = (messLett+k)%26 ;
+      
                   
      }
-    return newLett ; 
+    return messLett ; 
     
     
     }
