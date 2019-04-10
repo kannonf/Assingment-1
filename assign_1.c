@@ -13,7 +13,7 @@ char decryptSub (char *input, char *k, unsigned long int strLen ) ;
 int main() {
     
     char input[] = "TEST STRING" ;
-    char key[] = "QWERTYUIOPASDFGHJKLZXCVBNM" ;
+    char key[] = "QWERTYUIOPASDFGHJKLZXCBNM" ;
     printf("message: %s\n", input);
     unsigned long int strLen = (sizeof(input)/sizeof(char));
     decryptSub(input, key, strLen );                          //middle letter is key fro rotataon cyphers
@@ -22,6 +22,8 @@ int main() {
     for (int j = 0; j < (sizeof(input)/sizeof(char)); j++) {
         printf("%c", input[j]);
     }
+}
+
 
   // printf("Please enter an option")
   // scanf () //send to correct function
@@ -30,7 +32,7 @@ int main() {
   //printf() print result of function after encryption/decryption
       
  //function definition for decrypting sub cypher      
-char decryptSub (char *input, char *k, unsigned long int strLen )     
+char decryptSub (char *input, char *k, unsigned long int strLen ) {    
    int i = 0 ; //counter
         
     printf("Input is %lu chars long\n", strLen) ; // tracking string length 
@@ -42,15 +44,20 @@ char decryptSub (char *input, char *k, unsigned long int strLen )
             input[i] = input[i] - 32 ; 
             printf("Converted to UC: %c\n", input[i]) ;
         }
-        int pos = input [i] - 65 ;
-        //Use the encrypt function on the UC letters
+       
+       int pos = input[i] - 66 ;
+        //Use the decrypt function on the UC letters
         if (input[i] > 64 && input[i] < 91) {
-            printf("About to encrypt: %c %d\n", input[i], input[i]) ;
-            input[i] = k[pos];
+            printf("About to decrypt: %c %d\n", input[i], input[i]) ;
+             input[i] = k[pos];
             
             printf("converted value:  %c\n",k[pos]) ;
       
- }      
+        }     
+    }
+}
+
+
  /* DONE FUCNTIONS BELOW ___________________________________________________________________________
  //function definition for encrypting sub cypher
 char encryptSub (char *input, char *k, unsigned long int strLen) { 
