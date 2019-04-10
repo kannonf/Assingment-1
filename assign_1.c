@@ -12,6 +12,8 @@ char decryptSub (char *input, char *k, unsigned long int strLen ) ;
 //extra comments
 int main() {
     
+    
+    //RUNNING CODE EXAMPLE FOR USE IN ALL FOUR FUNCTIONS
     char input[] = "TEST STRING" ;
     char key[] = "QWERTYUIOPASDFGHJKLZXCBNM" ;
     printf("message: %s\n", input);
@@ -23,14 +25,23 @@ int main() {
         printf("%c", input[j]);
     }
 }
+char encChoice
+printf("please enter an option 1) encrypt a rotation cypher\n 2)decrypt a roatation cypher\n 3)encrypt a substituion cypher\n 4) decrypt a substituition cypher\n your choice: %c", encChoice) ;
+scanf ("%c, encChoice")
 
-
+switch (encChoice)
+        case  1: printf("Please enter text to encode: ", input [] )
+                 scanf ("%c", &input[])
+                 printf("Please enter rotation key: %d", k)
+                 scanf("%d", k)
+            char input [] 
   // printf("Please enter an option")
   // scanf () //send to correct function
   // print("please enter message")
   // scanf() //read input message 
   //printf() print result of function after encryption/decryption
-      
+   
+   /* DONE FUCNTIONS BELOW ___________________________________________________________________________
  //function definition for decrypting sub cypher      
 char decryptSub (char *input, char *k, unsigned long int strLen ) {    
    int i = 0 ; //counter
@@ -58,7 +69,7 @@ char decryptSub (char *input, char *k, unsigned long int strLen ) {
 }
 
 
- /* DONE FUCNTIONS BELOW ___________________________________________________________________________
+ 
  //function definition for encrypting sub cypher
 char encryptSub (char *input, char *k, unsigned long int strLen) { 
     int i = 0 ; //counter
@@ -142,4 +153,3 @@ char decryptRotate (char *input, int k, unsigned long int strLen ) {
 
 
 
-//function definition for decrypting sub cypher 
