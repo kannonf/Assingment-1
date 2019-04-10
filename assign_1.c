@@ -2,7 +2,7 @@
 
 // define functions  // CHECK ISSPACE function
 //function prototype for encrypting rotation cypher
-void encryptRotate (char *input, int k) ;
+char encryptRotate (char *input, int k, unsigned long int str_len) ;
 //function prototype for decrypting rotation cypher 
 //char unencryptRotate (char input, int k)
 //function prototype for encrypting sub cypher
@@ -12,71 +12,50 @@ void encryptRotate (char *input, int k) ;
 //extra comments
 int main() {
     
-    char input[] = "TESTING" ;
+    char input[] = "Hello I'm writing ___ A TesT S^^tring" ;
     printf("message: %s\n", input);
-     encryptRotate(input, 7);
-    printf("Output: ");
-    for (int j = 0; j < 7; j++) {
-        printf("%c\n", input[j]);
-    }
-    printf("\n");
-
+    unsigned long int str_len = (sizeof(input)/sizeof(char));
+    encryptRotate(input, 20, str_len);
+    printf("Output: \n");
+    for (int j = 0; j < (sizeof(input)/sizeof(char)); j++) {
+        printf("%c", input[j]);
     
-    //char retval = encrytpRotate([i], 3);
-     
-   //messageText = abcdefg
-   //rotationAmount = 2
-   
+    }
+
   // printf("Please enter an option")
   // scanf () //send to correct function
   // print("please enter message")
   // scanf() //read input message 
-        
-        //Convert LC to UC 
-        switch (*input)
-        case 1: (*char > 96 && *char < 123) {
-                char = char - 32 ;
-                return char ;
-                }
-            break;
-        //Don't encrypt anything that isn't UC 
-        case 2:  (*char > 32 && *char < 64 || *char > 91 && *char <97) {
-                return 0 ;
-                }
-            break;
-                    
-        //use the encrypt function if its an upper case letter
-        case 3: (*char > 64 && *char < 91) {
-                    //use encrypt function
-                }
-           break;
-       default; printf("unrecognised value entered")
-            
+                      
+ }      
+
+
 
 //function definition for encrypting rotation cypher
-void encryptRotate (char *input, int k) {
+char encryptRotate (char *input, int k, unsigned long int str_len) {
     int i = 0 ; //counter
-            for (i = 0 ; i < (sizeof(input)/sizeof(char)); i++) {
+    
+    printf("Input is %lu chars long\n", str_len);
+    for (i = 0 ; i < str_len; i++) {
             
-            /*Convert LC to UC 
-                if (*char > 96 && *char < 123) {
-                    char = char - 32 ;
-                    retrun char ;
-                }
-           
-           //Don't encrypt anything that isn't UC 
-                if (*char > 32 && *char < 64 || *char > 91 && *char <97) {
-                    return 0 ;
-                }
-                else if (*char > 64 && *char <91 ) {
-                    
-            //use the encrypt function
-                else if (*char > 64 && *char < 91) {
-                    //use encrypt function
-                }
-                
-                
-        //printf("About to encrypt: %c %d\n", input[i], input[i]);
+         //Convert LC to UC 
+        if (input[i] > 96 && input[i] < 123) {
+            printf("Input is LC: %c\n", input[i]);
+            input[i] = input[i] - 32; 
+            printf("Converted to UC: %c\n", input[i]);
+        }
+
+
+        //Use the encrypt function on UC letters
+        if (input[i] > 64 && input[i] < 91) {
+            printf("About to encrypt: %c %d\n", input[i], input[i]);
+            input[i] = ((((int)input[i])+k)-65)%26; 
+            input[i] += 65 ;
+            printf("Encrypted value: %c\n", input[i]);
+        }
+         
+               
+        //printf("About to encrypt: %c %d\n", input[], input[]);
         //input[i] = (((int)input[i])+k)%90;          
      }
 }
