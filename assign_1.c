@@ -8,40 +8,58 @@
 //function prototype for encrypting sub cypher
 //    DONE: char encryptSub (char *input, char *k, unsigned long int strLen);
 //function prototype for decrypting sub cypher 
-char decryptSub (char *input, char *k, unsigned long int strLen ) ;
+//char decryptSub (char *input, char *k, unsigned long int strLen ) ;
 //extra comments
 int main() {
     
-    
+    /*
     //RUNNING CODE EXAMPLE FOR USE IN ALL FOUR FUNCTIONS
     char input[] = "TEST STRING" ;
     char key[] = "QWERTYUIOPASDFGHJKLZXCBNM" ;
     printf("message: %s\n", input);
     unsigned long int strLen = (sizeof(input)/sizeof(char));
-    decryptSub(input, key, strLen );                          //middle letter is key fro rotataon cyphers
+    decryptSub(input, key, strLen );                          //middle letter is key for rotataon cyphers
     printf("Output: \n");
     
     for (int j = 0; j < (sizeof(input)/sizeof(char)); j++) {
         printf("%c", input[j]);
-    }
-}
-char encChoice
-printf("please enter an option 1) encrypt a rotation cypher\n 2)decrypt a roatation cypher\n 3)encrypt a substituion cypher\n 4) decrypt a substituition cypher\n your choice: %c", encChoice) ;
-scanf ("%c, encChoice")
+    } */
 
-switch (encChoice)
-        case  1: printf("Please enter text to encode: ", input [] )
-                 scanf ("%c", &input[])
-                 printf("Please enter rotation key: %d", k)
-                 scanf("%d", k)
-            char input [] 
+char encChoice = 1 ;
+//char decrypted  ;
+char input[] ;//= "TEST STRING" ;
+int rotKey = 1 ;
+//char subKey[];
+unsigned long int strLen = (sizeof (input)/sizeof (char));
+
+printf("Please enter an option\n 1)Encrypt a rotation cypher\n 2)Decrypt a roatation cypher\n 3)Encrypt a substituion cypher\n 4)Decrypt a substituition cypher\n       Your choice: %c\n", encChoice) ;
+scanf ("%c\n", &encChoice) ;
+
+switch (encChoice) {
+    
+        case  1: //get inputs and call function 
+                printf("Please enter text to encode: %c\n", input[] );
+                scanf ("%c", &input) ;
+                printf("Yout input: %c", input[])
+                printf("Please enter rotation key: %d", rotKey) ;
+                scanf("%d", &rotKey) ;
+                encryptRotate( *input, rotKey, strLen) ; // how to call functions???????
+                break;
+        
+        default:
+            printf("code isn't working") ;
+            
+}
+
   // printf("Please enter an option")
   // scanf () //send to correct function
   // print("please enter message")
   // scanf() //read input message 
   //printf() print result of function after encryption/decryption
    
-   /* DONE FUCNTIONS BELOW ___________________________________________________________________________
+ 
+ // DONE FUCNTIONS BELOW ___________________________________________________________________________
+ /*
  //function definition for decrypting sub cypher      
 char decryptSub (char *input, char *k, unsigned long int strLen ) {    
    int i = 0 ; //counter
@@ -68,8 +86,8 @@ char decryptSub (char *input, char *k, unsigned long int strLen ) {
     }
 }
 
-
- 
+*/
+/* 
  //function definition for encrypting sub cypher
 char encryptSub (char *input, char *k, unsigned long int strLen) { 
     int i = 0 ; //counter
@@ -94,12 +112,16 @@ char encryptSub (char *input, char *k, unsigned long int strLen) {
         }
     }
 }
+*/
 
 //function definition for encrypting rotation cypher
-char encryptRotate (char *input, int k, unsigned long int strLen ) {
+char encryptRotate (char *input, int rotKey, unsigned long int strLen ) {
+    //char input[] ;
+    //int k ;      
+            
     int i = 0 ; //counter
     
-    printf("Input is %lu chars long\n", str_len);
+    printf("Input is %lu chars long\n", strLen);
     for (i = 0 ; i < strLen ; i++) {
             
         //Convert LC to UC 
@@ -113,14 +135,15 @@ char encryptRotate (char *input, int k, unsigned long int strLen ) {
         //Use the encrypt function on UC letters
         if (input[i] > 64 && input[i] < 91) {
             printf("About to encrypt: %c %d\n", input[i], input[i]) ;
-            input[i] = ((((int)input[i])+k)-65)%26 ; 
+            input[i] = ((((int)input[i])+rotKey)-65)%26 ; 
             input[i] += 65 ;
             printf("Encrypted value: %c\n", input[i]) ;
         }          
           
      }
 }
-     
+
+/*
 //function definition for decrypting rotation cypher
 char decryptRotate (char *input, int k, unsigned long int strLen ) {
     int i = 0 ; //counter
