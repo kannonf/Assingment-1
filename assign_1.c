@@ -116,9 +116,9 @@ char encryptSub (char *input, char *k, unsigned long int strLen) {
 
 //function definition for encrypting rotation cypher
 char encryptRotate (char *input, int rotKey, unsigned long int strLen ) {
-    //char input[] ;
-    //int k ;      
-            
+    char input[] ;
+    int rotKey ;      
+       
     int i = 0 ; //counter
     
     printf("Input is %lu chars long\n", strLen);
