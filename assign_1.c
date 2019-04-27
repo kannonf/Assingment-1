@@ -2,92 +2,84 @@
 
 // define functions  // CHECK ISSPACE function
 //function prototype for encrypting rotation cypher
- char encryptRotate (char *input, int k, unsigned long int strLen) ;
+ char encryptRotate (char *input, int rotKey, unsigned long int strLen) ;
 //function prototype for decrypting rotation cypher 
- char decryptRotate (char *input, int k, unsigned long int strLen ) ;
+ //char decryptRotate (char *input, int k, unsigned long int strLen ) ;
 //function prototype for encrypting sub cypher
- char encryptSub (char *input, char *k, unsigned long int strLen);
+ //char encryptSub (char *input, char *k, unsigned long int strLen);
 //function prototype for decrypting sub cypher 
- char decryptSub (char *input, char *k, unsigned long int strLen ) ;
+ //char decryptSub (char *input, char *k, unsigned long int strLen ) ;
 //extra comments
+
 int main() {
     
     
-    /*
+    
     //RUNNING CODE EXAMPLE FOR USE IN ALL FOUR FUNCTIONS
+    char encChoice = 1 ;
     char input[] = "TEST STRING" ;
-    dont need char key[] = "QWERTYUIOPASDFGHJKLZXCBNM" ;
+    int rotKey = 1 ;
+    //char subKey[] = "QWERTYUIOPASDFGHJKLZXCBNM" ;
     printf("message: %s\n", input);
-    unsigned long int strLen = (sizeof(input)/sizeof(char));
-    decryptSub(input, key, strLen );    // function you want to run                      //middle letter is key for rotataon cyphers
+    unsigned long int strLen = (sizeof(input)/sizeof(char));    
     printf("Output: \n");
     
-    for (int j = 0; j < (sizeof(input)/sizeof(char)); j++) {
+    //for (int j = 0; j < (sizeof(input)/sizeof(char)); j++) {
         printf("%c", input[j]);
-    } */
-
-//char encChoice = 1 ;
-//char decrypted  ;
-//char input[] ;//= "TEST STRING" ;
-//int rotKey = 1 ;
-//char subKey[];
-//unsigned long int strLen = (sizeof (input)/sizeof (char));
+    } 
 
    
-printf("Please enter an option\n 1)Encrypt a rotation cypher\n 2)Decrypt a roatation cypher\n 3)Encrypt a substituion cypher\n 4)Decrypt a substituition cypher\n       Your choice: %c\n", encChoice) ;
-scanf ("%c\n", &encChoice) ;
+//printf("Please enter an option\n 1)Encrypt a rotation cypher\n 2)Decrypt a roatation cypher\n 3)Encrypt a substituion cypher\n 4)Decrypt a substituition cypher\n       Your choice: %c\n", encChoice) ;
+//scanf ("%c\n", &encChoice) ;
 
 switch (encChoice) {
     
         case  1: //get inputs and call function for encryptRotate
-                printf("Please enter text to encrypt: %c\n", input[] );
-                scanf ("%c", &input[]) ;
-                printf("Your input: %c", *input[])
-                printf("Please enter rotation key: %d", rotKey) ;
-                scanf("%d", &rotKey) ;
-                encryptRotate( *input, rotKey, strLen) ; // how to call functions???????
+                //printf("Please enter text to encrypt: %c\n", input[] );
+                //scanf ("%c", &input[]) ;
+                //printf("Your input: %c", *input[])
+                //printf("Please enter rotation key: %d", rotKey) ;
+                //scanf("%d", &rotKey) ;
+               // how to call functions???????
+                printf("Encrypted value: %c\n", encryptRotate( *input, rotKey, strLen));
                 break;
        
        case 2: //get inputs and call function for decryptRotate
-                printf("Please enter text to decrypt: %c\n", input[] );
-                scanf ("%c", &input[]) ;
-                printf("Your input: %c", *input[])
-                printf("Please enter rotation key: %d", rotKey) ;
-                scanf("%d", &rotKey) ;
-                decryptRotate( *input, rotKey, strLen) ; // how to call functions???????
-                break;
+                //printf("Please enter text to decrypt: %c\n", input[] );
+                //scanf ("%c", &input[]) ;
+                //printf("Your input: %c", *input[])
+                //printf("Please enter rotation key: %d", rotKey) ;
+                //scanf("%d", &rotKey) ;
+                //decryptRotate( *input, rotKey, strLen) ; // how to call functions???????
+                //break;
         
         case 3: //get inputs and call encryptSub
-                printf("Please enter text to encode: %c\n", input[] );
-                scanf ("%c", &input[]) ;
-                printf("Your input: %c", *input[])
-                printf("Please enter substitutuion key: %d", key[]) ;
-                scanf("%d", &rotKey) ;
-                char encryptSub (char *input, char *k, unsigned long int strLen) ; // how to call functions???????
-                break;
+                //printf("Please enter text to encode: %c\n", input[] );
+                //scanf ("%c", &input[]) ;
+                //printf("Your input: %c", *input[])
+                //printf("Please enter substitutuion key: %d", key[]) ;
+                //scanf("%d", &rotKey) ;
+                //char encryptSub (char *input, char *k, unsigned long int strLen) ; // how to call functions???????
+                //break;
                 
         case 4: //get inputs and call decryptSub
-                printf("Please enter text to encode: %c\n", input[] );
-                scanf ("%c", &input[]) ;
-                printf("Your input: %c", *input[])
-                printf("Please enter substitutuion key: %d", key[]) ;
-                scanf("%d", &rotKey) ;
-                char decryptSub (char *input, char *k, unsigned long int strLen) ; // how to call functions???????
-                break;
+                //printf("Please enter text to encode: %c\n", input[] );
+                //scanf ("%c", &input[]) ;
+                //printf("Your input: %c", *input[])
+                //printf("Please enter substitutuion key: %d", key[]) ;
+                //scanf("%d", &rotKey) ;
+                //char decryptSub (char *input, char *k, unsigned long int strLen) ; // how to call functions???????
+                //break;
                 
         default:
             printf("code isn't working") ;
             
+        }
 }
 //end of main 
-  // printf("Please enter an option")
-  // scanf () //send to correct function
-  // print("please enter message")
-  // scanf() //read input message 
-  //printf() print result of function after encryption/decryption
-   
+    
  
- // DONE FUCNTIONS BELOW ___________________________________________________________________________
+ //DONE FUCNTIONS BELOW ___________________________________________________________________________
  /*
  //function definition for decrypting sub cypher      
 char decryptSub (char *input, char *k, unsigned long int strLen ) {    
@@ -114,9 +106,8 @@ char decryptSub (char *input, char *k, unsigned long int strLen ) {
         }     
     }
 }
-
 */
-/* 
+/*
  //function definition for encrypting sub cypher
 char encryptSub (char *input, char *k, unsigned long int strLen) { 
     int i = 0 ; //counter
@@ -144,9 +135,9 @@ char encryptSub (char *input, char *k, unsigned long int strLen) {
 */
 
 //function definition for encrypting rotation cypher
-char encryptRotate (char *input, int rotKey, unsigned long int strLen ) {
-    char input[] ;
-    int rotKey ;      
+char encryptRotate (char *input, int rotKey, unsigned long int strLen) {
+    //char input[] ;
+    //int rotKey ;      
        
     int i = 0 ; //counter
     
@@ -198,8 +189,8 @@ char decryptRotate (char *input, int k, unsigned long int strLen ) {
         }
     }
 }
-  ________________________________________________________________________________*/ 
-
+ */
+ 
 
 
 
