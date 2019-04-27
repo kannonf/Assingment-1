@@ -25,8 +25,8 @@ int main() {
     printf("Output: \n");
     
     //for (int j = 0; j < (sizeof(input)/sizeof(char)); j++) {
-        printf("%c", input[j]);
-    } 
+        //printf("%c", input[j]);
+    
 
    
 //printf("Please enter an option\n 1)Encrypt a rotation cypher\n 2)Decrypt a roatation cypher\n 3)Encrypt a substituion cypher\n 4)Decrypt a substituition cypher\n       Your choice: %c\n", encChoice) ;
@@ -41,7 +41,7 @@ switch (encChoice) {
                 //printf("Please enter rotation key: %d", rotKey) ;
                 //scanf("%d", &rotKey) ;
                // how to call functions???????
-                printf("Encrypted value: %c\n", encryptRotate( *input, rotKey, strLen));
+                printf("Encrypted value: %c\n", encryptRotate( &*input, rotKey, strLen));
                 break;
        
        case 2: //get inputs and call function for decryptRotate
