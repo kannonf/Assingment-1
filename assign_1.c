@@ -17,7 +17,7 @@ int main() {
     
     //RUNNING CODE EXAMPLE FOR USE IN ALL FOUR FUNCTIONS
     char encChoice = 1 ;
-    char input[] = "TEST STRING" ;
+    char input[] = "TEsT STrInG" ;
     int rotKey = 1 ;
     //char subKey[] = "QWERTYUIOPASDFGHJKLZXCBNM" ;
     printf("message: %s\n", input);
@@ -34,7 +34,7 @@ int main() {
 
 switch (encChoice) {
     
-        case  1: //get inputs and call function for encryptRotate
+        case  1://get inputs and call function for encryptRotate
                 //printf("Please enter text to encrypt: %c\n", input[] );
                 //scanf ("%c", &input[]) ;
                 //printf("Your input: %c", *input[])
@@ -72,7 +72,7 @@ switch (encChoice) {
                 //break;
                 
         default:
-            printf("code isn't working") ;
+            printf("The charachter entered is not an option") ;
             
         }
 }
