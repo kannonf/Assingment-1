@@ -1,12 +1,14 @@
 /*Kannon Ford C3163911
     ENGG1003 programming assingment 1, encryption and decryption of text using a rotation and substittuion cypher.
- 
+    
+    Working in HARD CODE AREA:
     Enter a value for the type of encyption/decryption wanted as varialble encChoice
-        1)Encrypt a rotation cypher
-        2)Decrypt a roatation cypher
-        3)Encrypt a substituion cypher
-        4)Decrypt a substituition cypher
-    Enter the rotation key or the Substition key required in hard coded area, and set the unused key to 0 or comment it out
+        1 Encrypt a rotation cypher
+        2 Decrypt a roatation cypher
+        3 Encrypt a substituion cypher
+        4 Decrypt a substituition cypher
+    Enter the text to be encrypted/decrypted in variable input[]
+    Enter the rotation key or the Substition key required
     Run program to see the encrypted/decrypted message
 */
 
@@ -14,7 +16,7 @@
 
 // define functions for all four types of encryption/decryption
 /* char is used for easy comparison to the ASCII table, int is used for simplicity in the rotation key which is between 0 and 26 
-   the unsinged long int format for the string Length was found using agoogle search and demonstartor help to help defien the 
+   the unsinged long int format for the string Length was found using a google search and demonstartor help to help define the 
    length of the strings being input for encryption/decryption */
   
 //function prototype for encrypting rotation cypher
@@ -29,7 +31,7 @@
 
 int main() {
       
-    //Hard coding examples used for functions for testing and final as couldnt get che user interface working//
+    //HARD CODE AREA  used for functions for testing and final as couldnt get che user interface working//
     //Please enter inputs and keys below
     char encChoice = 4 ; //choice of type of encryption/decryption wanted, see header
     char input[] = "TeS^t @ St r&ing 69 " ; //text to be enccrypted/decrypted
@@ -38,14 +40,14 @@ int main() {
        
     unsigned long int strLen = (sizeof(input)/sizeof(char)); // variable to get string length for the fucntions to use    
     
- /* Attempted user interface, couldnt work out how to add inputs on che 
+ /* Attempted user interface, couldnt work out how to use inputs on che 
  
 printf("Please enter an option\n 1)Encrypt a rotation cypher\n 2)Decrypt a roatation cypher\n 3)Encrypt a substituion cypher\n 4)Decrypt a substituition cypher\n Your choice:  \n", encChoice) ;
 scanf ("%c\n", &encChoice) ;
 */
 
 
-switch (encChoice) { // switch statements to choose which functions to run
+switch (encChoice) { // switch statements to choose which functions to run 1-4 default is "charachter not an option"
     
         case  1://get inputs and call function for encryptRotate (unable to get full user interface working in che)
                 //printf("Please enter text to encrypt: %c\n", input[1024] );
@@ -88,12 +90,7 @@ switch (encChoice) { // switch statements to choose which functions to run
             
         } 
 }
-//end of main 
-    
- 
- //DONE FUCNTIONS BELOW ___________________________________________________________________________
- 
- //function definition for decrypting sub cypher    
+//function definition for decrypting sub cypher    
 char decryptSub (char *input, char *subKey, unsigned long int strLen ) {    
    int i = 0 ; //counter
         
@@ -118,8 +115,7 @@ char decryptSub (char *input, char *subKey, unsigned long int strLen ) {
         }     
     }
 }
-
- //function definition for encrypting sub cypher
+//function definition for encrypting sub cypher
 char encryptSub (char *input, char *subKey, unsigned long int strLen) { 
     int i = 0 ; //counter
     
@@ -142,8 +138,6 @@ char encryptSub (char *input, char *subKey, unsigned long int strLen) {
         }
     }
 }
-
-
 //function definition for encrypting rotation cypher
 char encryptRotate (char *input, int rotKey, unsigned long int strLen) {
     int i = 0 ; //counter
@@ -169,8 +163,6 @@ char encryptRotate (char *input, int rotKey, unsigned long int strLen) {
           
      }
 }
-
-
 //function definition for decrypting rotation cypher
 char decryptRotate (char *input, int k, unsigned long int strLen ) {
     int i = 0 ; //counter
