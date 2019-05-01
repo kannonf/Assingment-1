@@ -34,7 +34,7 @@ int main() {
     //HARD CODE AREA  used for functions for testing and final as couldnt get che user interface working//
     //Please enter inputs and keys below
     char encChoice = 4 ; //choice of type of encryption/decryption wanted, see header
-    char input[] = "TeS^t @ St r&ing 69 " ; //text to be enccrypted/decrypted
+    char input[] = "ITSSG" ; //text to be enccrypted/decrypted
     int rotKey = 1 ; //rotation Key for function options 1 & 2 
     char subKey[] = "QWERTYUIOPASDFGHJKLZXCBNM" ; //substitution key for function options 3 & 4
        
@@ -42,7 +42,7 @@ int main() {
     
  /* Attempted user interface, couldnt work out how to use inputs on che 
  
-printf("Please enter an option\n 1)Encrypt a rotation cypher\n 2)Decrypt a roatation cypher\n 3)Encrypt a substituion cypher\n 4)Decrypt a substituition cypher\n Your choice:  \n", encChoice) ;
+printf("Please enter an option\n 1)Encrypt a rotation cypher\n 2)Decrypt a roatation cypher\n 3)Encrypt a substituion cypher\n 4)Decrypt a substituition cypher\n Your choice: %c\n", encChoice) ;
 scanf ("%c\n", &encChoice) ;
 */
 
@@ -104,13 +104,13 @@ char decryptSub (char *input, char *subKey, unsigned long int strLen ) {
             //printf("Converted to UC: %c\n", input[i]) ;
         }
        
-       int pos = input[i] - 66 ;
+       int pos = input[i] - 65 ;
         //Use the decrypt function on the Upper Case letters by using the ASCII table locations 
         if (input[i] > 64 && input[i] < 91) {
            // printf("About to decrypt: %c %d\n", input[i], input[i]) ;
-             input[i] = subKey[pos];
+            input[i] = subKey[pos];
             
-            printf("%c",subKey[pos+1]) ;
+            printf("%c",subKey[pos]) ;
       
         }     
     }
@@ -188,10 +188,4 @@ char decryptRotate (char *input, int k, unsigned long int strLen ) {
         }
     }
 }
- 
- 
-
-
-
-
-
+  
